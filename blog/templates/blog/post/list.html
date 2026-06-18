@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}My Blog{% endblock title %}
+
+{% block content %}
+    <h1>My Blog</h1>
+    {% for post in posts %}
+        <h2>
+            <a href="{% url 'blog:post_detail' post.id %}">
+                {{ post.title }}
+            </a>
+        </h2>
+        <p class="date">
+            Published {{ post.publish }} by {{ post.author }}
+        </p>
+        
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 50%; height: auto;">
+        {% endif %}
+            
+        {{ post.body | truncatewords:30 | linebreaks }}
+    {% endfor %}
+
+    
+    {% comment %} Paginator {% endcomment %}
+    <nav>
+        <ul>
+            {% if posts.has_previous %}
+                <li>
+                    <a href="?page=1">Primera</a>
+                </li>
+                <li>
+                    <a href="?page={{ posts.previous_page_number }}">Anterior</a>
+                </li>
+            {% endif %}
+
+            <li>
+                Página {{ posts.number }} de {{ posts.paginator.num_pages }}
+            </li>
+
+            {% if posts.has_next %}
+                <li>
+                    <a href="?page={{ posts.next_page_number }}">Siguiente</a>
+                </li>
+                <li>
+                    <a href="?page={{ posts.paginator.num_pages }}">Última</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock content %}

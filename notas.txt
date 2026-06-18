@@ -1,0 +1,4 @@
+usuario = admin
+email = ing.palacios.omar@gmail.com
+contraseña = blog2026
+
