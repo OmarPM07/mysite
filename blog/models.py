@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from taggit.managers import TaggableManager
+from django_ckeditor_5.fields import CKEditor5Field
 
 # Create your models here.
 
@@ -21,7 +23,9 @@ class Post(models.Model):
                                on_delete=models.CASCADE, 
                                related_name='blog_posts')
     
-    body = models.TextField()    
+    
+    body = CKEditor5Field('Text', config_name='extends') 
+       
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

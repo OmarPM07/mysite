@@ -16,6 +16,11 @@ class PostAdmin(admin.ModelAdmin):
     
     readonly_fields = ['image_preview']
     
+    class Media:
+        css = {
+            'all': ('css/admin_custom.css',)
+        }
+    
     def image_preview(self, obj):
         from django.utils.html import format_html
         if obj.image:

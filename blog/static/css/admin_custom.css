@@ -1,0 +1,46 @@
+/* Ampliar el contenedor del formulario completo en el admin */
+#content-main,
+.module,
+form#post_form,
+.aligned {
+    max-width: 100% !important;
+}
+
+.form-row.field-body {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.field-body .ck-editor {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.ck-editor__top,
+.ck-editor__main,
+.ck-toolbar {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+}
+
+.ck.ck-toolbar {
+    flex-wrap: wrap !important;
+}
+
+#content {
+    max-width: 100% !important;
+}
+
+/* Ajustar el layout cuando el sidebar está presente */
+#content-main {
+    margin-left: 0 !important;
+}
+
+.main {
+    overflow-x: hidden !important;
+}
+
+#nav-sidebar {
+    flex-shrink: 0 !important;
+}

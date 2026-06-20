@@ -18,7 +18,7 @@
             <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 50%; height: auto;">
         {% endif %}
             
-        {{ post.body | truncatewords:30 | linebreaks }}
+        {{ post.body | truncatewords:30 | safe }}
     {% endfor %}
 
     

@@ -12,5 +12,5 @@
         <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto;">
     {% endif %}
     
-    {{ post.body|linebreaks }}
+    {{ post.body|safe }}
 {% endblock content %}
