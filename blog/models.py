@@ -33,9 +33,12 @@ class Post(models.Model):
     status = models.CharField(max_length=2, choices=Status, default=Status.DRAFT)
     
     image = models.ImageField(upload_to='posts/%Y/%m/%d', blank=True)
+    views = models.PositiveIntegerField(default=0)
     
     objects = models.Manager() # The default manager
     published = PublishedManager() # Our custom manager
+    
+    tags = TaggableManager()
     
     class Meta:
         ordering = ["-publish"]

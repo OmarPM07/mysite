@@ -12,8 +12,10 @@
         {% block content %}{% endblock content %}
     </div>
     <div id="sidebar">
-        <h2>My Blog</h2>
-        <p>This is my Blog</p>
+        <h2>
+            <a href=" {% url 'blog:post_list' %}">Blog Deriva2</a>
+        </h2>
+        <p>El blog de las derivadas e integrales</p>
     </div>
 </body>
 </html>

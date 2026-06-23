@@ -47,9 +47,41 @@ p.date {
 }
 
 /* pagination */
-.pagination { 
-    margin:40px 0; 
-    font-weight:bold;
+
+.pagination {
+    margin: 40px 0;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.pagination li a,
+.pagination li span {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: #efefef;
+    color: #333;
+    font-size: 14px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pagination li a:hover {
+    background: #00abff;
+    color: #fff;
+}
+
+.pagination li.current span {
+    background: #00abff;
+    color: #fff;
 }
 
 /* forms */
