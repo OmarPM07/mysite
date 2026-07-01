@@ -25,10 +25,10 @@ SECRET_KEY = 'django-insecure-c+@@%wv+v!+nb+u^n&5a=mq4os#n*9^dtvwo59g8-8+(ix^290
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Debug en Desarrollo
-DEBUG = True
+# DEBUG = True
 
 # Debun en producción
-#DEBUG = False
+DEBUG = False
 
 # Opción para desarrollo
 ALLOWED_HOSTS = ["OmarPM07.pythonanywhere.com", "127.0.0.1"]
