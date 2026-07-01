@@ -1,0 +1,22 @@
+
+    <nav>
+        <ul class="pagination">
+            {% if posts.has_previous %}
+                <li><a href="?page=1">« Primera</a></li>
+                <li><a href="?page={{ posts.previous_page_number }}">‹ Anterior</a></li>
+            {% endif %}
+
+            {% for num in posts.paginator.page_range %}
+                {% if num == posts.number %}
+                    <li class="current"><span>{{ num }}</span></li>
+                {% else %}
+                    <li><a href="?page={{ num }}">{{ num }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if posts.has_next %}
+                <li><a href="?page={{ posts.next_page_number }}">Siguiente ›</a></li>
+                <li><a href="?page={{ posts.paginator.num_pages }}">Última »</a></li>
+            {% endif %}
+        </ul>
+    </nav>
